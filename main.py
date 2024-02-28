@@ -22,7 +22,7 @@ class data_entry:
             self.date = self.cal.get()
         
             if self.firstname and self.lastname and self.sr_no:
-                # Course info
+                # Work info
                 self.registration_status = self.reg_status_var.get()
                 self.starthrs = self.starthrs_spinbox.get()
                 self.stophrs = self.stophrs_spinbox.get()
@@ -93,7 +93,7 @@ class data_entry:
         for widget in self.user_info_frame.winfo_children():
             widget.grid_configure(padx=10, pady=5)
 
-        # Saving Course Info
+        # Saving Work Info
         self.work_frame = tkinter.LabelFrame(self.frame)
         self.work_frame.grid(row=1, column=0, sticky="news", padx=20, pady=10)
 
@@ -143,10 +143,11 @@ class data_entry:
                                         variable=self.accept_var, onvalue="Accepted", offvalue="Not Accepted")
         self.terms_check.grid(row=0, column=0)
         
+        # Reset Button
         self.button1 = tkinter.Button(self.terms_frame, text="Reset", command= self.clearfunc)
         self.button1.grid(row=0, column=2, sticky="news", padx=20, pady=10)
 
-        # Button
+        # Enter Button
         self.button = tkinter.Button(self.frame, text="Enter data", bg='green', command= self.enter_data)
         self.button.grid(row=3, column=0, sticky="news", padx=20, pady=10)
         
